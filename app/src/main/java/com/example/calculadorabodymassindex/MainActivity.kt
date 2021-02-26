@@ -14,19 +14,18 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        calcular_btn.setOnClickListener {
+        calcular_btn.setOnClickListener{
             if (altura.text.isNotEmpty() && peso.text.isNotEmpty()) {
-                val a: Float = altura.text.toString().toFloat() / 100
-                val p: Float = peso.text.toString().toFloat()
-                val resultado: Float = p / (a * a)
+                val a:Float = altura.text.toString().toFloat() /100
+                val p:Float = peso.text.toString().toFloat()
+                val resultado:Float = p/(a*a)
                 resultado.text = "%.2f".format(resultado)
-            } else {
+        }   else {
                 showErrorSnack("Incorrect Values")
             }
-            else {
-            showErrorSnack("A filed is missing")
-        }
-        }
+        }   else {
+                showErrorSnack("A filed is missing")
+    }
         }
     }
 }
